@@ -1,0 +1,8 @@
+{
+  "name": "Test Me",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "9208d5fe"
+}
