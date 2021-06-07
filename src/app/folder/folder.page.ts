@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { AlertController } from '@ionic/angular';
-
+import { AlertController, IonRadioGroup } from '@ionic/angular';
+import data from './one.json';
 @Component({
   selector: 'app-folder',
   templateUrl: './folder.page.html',
@@ -9,12 +9,14 @@ import { AlertController } from '@ionic/angular';
 })
 export class FolderPage implements OnInit {
   public folder: string;
-
+  questions = data;
+  @ViewChild('radioGroup') radioGroup: IonRadioGroup
+  selectedRadioGroup: any;
   constructor(private activatedRoute: ActivatedRoute, private alertController: AlertController) { }
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
-    this.presentAlert();
+    // this.presentAlert();
   }
 
   async presentAlert() {
@@ -30,5 +32,15 @@ export class FolderPage implements OnInit {
 
     const { role } = await alert.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
+  }
+
+  radioGroupChange(event) {
+    console.log("radioGroupChange",event.detail);
+    this.selectedRadioGroup = event.detail;
+  }
+  
+  submit() {
+    console.log(this.radioGroup.value);
+    
   }
 }
