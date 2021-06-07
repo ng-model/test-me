@@ -15,7 +15,29 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <p class="intro"><u>Instructions</u></p>
+    <p class="instructions">i. Select only one answer <br>ii. Click again to unselect the previous selected answer </p>
   </div>
+  <ion-list >
+    <ion-radio-group allow-empty-selection>
+      <ion-list-header>
+        <ion-label>1. Which is the capital city of India?</ion-label>
+      </ion-list-header>
+  
+      <ion-item>
+        <ion-label>Biff</ion-label>
+        <ion-radio slot="start" value="biff"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Griff</ion-label>
+        <ion-radio slot="start" value="griff"></ion-radio>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Buford</ion-label>
+        <ion-radio slot="start" value="buford"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
 </ion-content>
